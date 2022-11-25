@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    private $products, $product;
+    private $products, $product, $comments;
 
     public function index() {
 
@@ -18,6 +19,8 @@ class HomeController extends Controller
     public function detail($id) {
 
         $this->product = Product::find($id);
-        return view("product-detail", ["product" => $this->product]);
+        $this->comments = Comment::all()->where("product_id", $id)->where("status", 1);
+
+        return view("product-detail", ["product" => $this->product, "comments" => $this->comments]);
     }
 }

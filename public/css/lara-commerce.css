@@ -1,0 +1,10 @@
+.nu-bg {
+    background-color: #E0E0E0;
+}
+
+.nu-card {
+    border-radius: 50px;
+    background: linear-gradient(145deg, #f0f0f0, #cacaca);
+    box-shadow:  20px 20px 60px #bebebe,
+    -20px -20px 60px #ffffff;
+}
