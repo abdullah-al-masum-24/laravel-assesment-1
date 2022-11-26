@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Redirect;
+
 use App\Models\Product;
 use App\Models\Category;
 use App\Models\Brand;
@@ -51,5 +53,18 @@ class ProductController extends Controller
 
         Product::deleteProduct($id);
         return redirect("/product/manage")->with('message', 'product delete with successfully !!');
+    }
+
+    public function categoryProductShow($id) {
+
+        $this->products = Product::all()->where("category_id", $id);
+        return view("category.index", ['products' => $this->products]);
+
+    }
+    public function brandProductShow($id) {
+
+        $this->products = Product::all()->where("brand_id", $id);
+        return view("category.index", ['products' => $this->products]);
+
     }
 }

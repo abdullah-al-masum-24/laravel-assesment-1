@@ -5,11 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+
 class Product extends Model
 {
     use HasFactory;
 
-    private static $imageName, $directory, $image, $product, $imgurl, $imgExtension;
+    private static $imageName, $directory, $image, $product, $imgurl, $imgExtension, $comments;
 
     public static function getImgUrl($request) {
         self::$image = $request->file("image");
@@ -64,7 +65,13 @@ class Product extends Model
             unlink(self::$product->image);
         }
 
+        self::commentsDelete($id);
+
         self::$product->delete();
+    }
+
+    public static function commentsDelete($id) {
+        self::$comments = Comment::where("product_id", $id)->delete();
     }
 
     public function category() {

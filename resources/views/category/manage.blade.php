@@ -10,6 +10,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 mx-auto">
+                    @if($categories->isNotEmpty())
                     <div class="card">
                         <div class="card-header">Manage Category</div>
                         <div class="card-body">
@@ -50,6 +51,11 @@
                             </table>
                         </div>
                     </div>
+                    @else
+                        <div class="col-md-12 notify text-center text-primary fw-bold p-5 display-3">
+                            No Category
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>

@@ -1,7 +1,7 @@
 @extends("master")
 
 @section("title")
-    manage
+    Comment Manage
 @endsection
 
 @section("main-content")
@@ -9,6 +9,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-9 mx-auto">
+                    @if($comments->isNotEmpty())
                     <div class="card">
                         <div class="card-header">Manage Comment</div>
                         <div class="card-body">
@@ -44,7 +45,7 @@
                                                         <li class="dropdown">
                                                             <a href="" class="nav-link badge text-bg-secondary" data-bs-target="#commnetDrop" data-bs-toggle="dropdown"><i class="fa-solid fa-ellipsis-vertical "></i></a>
                                                             <ul id="commnetDrop" class="dropdown-menu">
-                                                                <li><a href="{{ route("comment.update", ["id" => $comment->id]) }}" class="dropdown-item">{{ $comment->status == 0 ? 'Publish' : 'Unpublished' }}</a></li>
+                                                                <li><a href="{{ route("comment.update", ["id" => $comment->id]) }}" class="dropdown-item">{{ $comment->status == 0 ? 'Publish' : 'Unpublish' }}</a></li>
                                                                 <li><a href="{{ route("comment.delete", ["id" => $comment->id]) }}" class="dropdown-item">Delete</a></li>
                                                             </ul>
                                                         </li>
@@ -58,6 +59,11 @@
                             </table>
                         </div>
                     </div>
+                    @else
+                        <div class="col-md-12 notify text-center text-primary fw-bold p-5 display-3">
+                            No Comment
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>

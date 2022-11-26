@@ -18,19 +18,19 @@
                                 <div class="row mb-3">
                                     <label class="col-md-3">Name</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" name="name"/>
+                                        <input type="text" class="form-control" name="name" required/>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label class="col-md-3">Description</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" name="description"/>
+                                        <input type="text" class="form-control" name="description" required/>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label class="col-md-3">Image</label>
                                     <div class="col-md-9">
-                                        <input type="file" class="form-control" name="image"/>
+                                        <input type="file" class="form-control" name="image" required/>
                                     </div>
                                 </div>
                                 <div class="row mb-3">

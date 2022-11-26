@@ -12,7 +12,7 @@
 </head>
 <body>
 <header>
-    <nav class="navbar navbar-expand shadow-lg">
+    <nav class="navbar navbar-expand  shadow-lg">
         <div class="container">
             <a href="" class="navbar-brand">LARA COMMERCE</a>
             <ul class="navbar-nav">

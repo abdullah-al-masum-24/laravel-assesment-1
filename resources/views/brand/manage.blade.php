@@ -10,6 +10,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 mx-auto">
+                    @if($brands->isNotEmpty())
                     <div class="card">
                         <div class="card-header">Manage Brand</div>
                         <div class="card-body">
@@ -50,6 +51,11 @@
                             </table>
                         </div>
                     </div>
+                    @else
+                        <div class="col-md-12 notify text-center text-primary fw-bold p-5 display-3">
+                            No Brands
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>

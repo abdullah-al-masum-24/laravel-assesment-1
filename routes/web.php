@@ -21,7 +21,19 @@ use App\Http\Controllers\CommentController;
 
 //==================================== Home routes ================================================//
 Route::get("/", [HomeController::class, "index"])->name("home");
+
+//==================================== Product Show By Category & Brand routes ================================================//
+Route::get("/category/product/{id}", [ProductController::class, "categoryProductShow"])->name("category.product");
+Route::get("/brand/product/{id}", [ProductController::class, "brandProductShow"])->name("brand.product");
+
+//==================================== Product Detail routes ================================================//
 Route::get("/product/detail/{id}", [HomeController::class, "detail"])->name("product.detail");
+
+//==================================== Comment routes ================================================//
+Route::post("/comment/create/{id}", [CommentController::class, "create"])->name("comment.create");
+
+
+
 
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
@@ -54,8 +66,6 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::get("/comment/manage/", [CommentController::class, "index"])->name("comment.manage");
     Route::get("/comment/update/{id}", [CommentController::class, "update"])->name("comment.update");
     Route::get("/comment/delete/{id}", [CommentController::class, "delete"])->name("comment.delete");
-    Route::post("/comment/create/{id}", [CommentController::class, "create"])->name("comment.create");
-
 
 
     Route::get('/dashboard', function () {
