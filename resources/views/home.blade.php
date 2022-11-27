@@ -6,7 +6,7 @@
 
 @section("main-content")
 
-    <section class="py-5">
+    <section class="py-5 bg-dark">
         <div class="container">
             <div class="row">
                 @if($products->isNotEmpty())
@@ -18,9 +18,9 @@
                                <div class="card-title"></div>
                                <div class="card-text">
                                    <div>
-                                       <small><a href="{{ route("category.product", ["id" => $product->category_id]) }}">{{ $product->category->name }}</a></small>
-                                       <span class="mx-1">|</span>
-                                       <small><a href="{{ route("brand.product", ["id" => $product->brand_id]) }}">{{ $product->brand->name }}</a></small>
+                                       <small class="badge text-bg-secondary"><a href="{{ route("category.product", ["id" => $product->category_id]) }}" class="text-white text-capitalize">{{ $product->category->name }}</a></small>
+                                       <span class="mx-1 text-muted">|</span>
+                                       <small class="badge text-bg-primary"><a href="{{ route("brand.product", ["id" => $product->brand_id]) }}" class="text-white text-capitalize">{{ $product->brand->name }}</a></small>
                                    </div>
                                    <h4 class="mt-2 fw-bold text-capitalize">{{ $product->name }}</h4>
                                    <div><span>&dollar;</span><span>{{ $product->price }}</span></div>

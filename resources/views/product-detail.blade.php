@@ -6,7 +6,7 @@
 
 @section("main-content")
 
-    <section class="py-5">
+    <section class="py-5 bg-dark">
         <div class="container">
             <div class="row">
                 <div class="col-md-9 mx-auto">
@@ -23,9 +23,9 @@
                                             <h4>{{ $product->title }}</h4>
                                             <p class="text-muted">{{ $product->description }}</p>
                                             <div>
-                                                <span class="badge text-bg-secondary">Category: <a href="{{ route("category.product", ["id" => $product->category_id]) }}" class="text-white ms-2">{{ $product->category->name }}</a></span>
+                                                <span class="badge text-bg-secondary">Category: <a href="{{ route("category.product", ["id" => $product->category_id]) }}" class="text-white ms-2 text-capitalize">{{ $product->category->name }}</a></span>
                                                 <span class="mx-1">|</span>
-                                                <span class="badge text-bg-primary">Brand: <a href="{{ route("brand.product", ["id" => $product->brand_id]) }}" class="text-white ms-2">{{ $product->brand->name }}</a></span>
+                                                <span class="badge text-bg-primary">Brand: <a href="{{ route("brand.product", ["id" => $product->brand_id]) }}" class="text-white ms-2 text-capitalize">{{ $product->brand->name }}</a></span>
                                             </div>
                                             <div class="mt-3 position-relative"><span class="position-absolute fw-bold" style="font-size: 19px;">&dollar;</span> <span class="text-danger" style="font-size: 27px; margin-left: 13px;">{{ $product->price }}</span></div>
                                         </div>

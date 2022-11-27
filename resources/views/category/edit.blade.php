@@ -5,7 +5,7 @@
 @endsection
 
 @section('main-content')
-    <section class="py-5">
+    <section class="py-5 bg-dark">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 mx-auto">
